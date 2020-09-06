@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProvaSettingsProd';
-  pippo = '';
   constructor( private config: ConfigLoaderService){
    console.log('data ', this.config.configData);
   }

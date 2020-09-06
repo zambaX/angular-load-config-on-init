@@ -1,27 +1,13 @@
-# ProvaSettingsProd
+# ProvaSettings
+Questo progetto descrive il metodo per disporre di un file di configurazione json presente nella directory assets **liberamente modificabile DOPO il build in produzione**
+E' stato serenamente scopiazzato da questo [stackblitz](https://stackblitz.com/edit/angular-load-config-on-init-kaefr4)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
+In breve, si tratta di lanciare una funzione durante l'inizializzazione della App.
+Per far questo si sfrutta APP_INITIALIZER, a cui si da in pasto un service che legge (mediante HttpClient) il file json.
+APP_INITIALIZER ha bisogno di una *factory* da invocare, ovvero una funzione, che nel nostro caso sfrutta la DI per utilizzare il service sopra indicato.
 
-## Development server
+E' più facile leggere app.module che non spiegarlo a parole....
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+E' stato provato eseguendo ng build --prod e dando in pasto la *dist* ottenuta a http-server.
+Il componente app.component in console mostra il contenuto del file config.json (ovviamente il file deve rispettare l'interface indicata nel model\config.model.ts).
+Modificando le proprietà del file config.json l'output in console cambia di conseguenza... ##Maledette marmotte, funziona!##

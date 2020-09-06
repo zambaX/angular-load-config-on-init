@@ -1,3 +1,4 @@
 {
-    "DbConnect": "my_connection_string_123"
+    "DbConnect": "my_connection_string_123",
+    "Printers": [{"Name":"Printer A"},{"Name":"Printer B"}]
 }
