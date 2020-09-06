@@ -10,4 +10,11 @@ E' più facile leggere app.module che non spiegarlo a parole....
 
 E' stato provato eseguendo ng build --prod e dando in pasto la *dist* ottenuta a http-server.
 Il componente app.component in console mostra il contenuto del file config.json (ovviamente il file deve rispettare l'interface indicata nel model\config.model.ts).
-Modificando le proprietà del file config.json l'output in console cambia di conseguenza... ##Maledette marmotte, funziona!##
+Modificando le proprietà del file config.json l'output in console cambia di conseguenza...
+
+## maledette marmotte, FUNZIONA! ##
+
+
+
+
+
